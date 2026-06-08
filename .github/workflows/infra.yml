@@ -16,6 +16,13 @@ jops:
         steps:
         - name: Clone Github Rebo
           uses: actuion/chechout@v4
+
+
+        - name: Configure AWS Credential
+          uses: aws-action/Configure-aws-credential@v4
+          with: 
+              aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+              aws-access-access-key: ${{ secrets.AWS_ACCESS_ACCESS_KEY_ID }}
         - name: Infra initiate
           run: Terraform init
         - name: Terraform apply
