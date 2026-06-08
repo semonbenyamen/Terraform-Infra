@@ -3,6 +3,5 @@ variable "vpc_name" {
 }
 
 variable "vpc_cider" {
-
  type = string
 }
