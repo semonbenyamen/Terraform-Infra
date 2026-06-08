@@ -4,7 +4,7 @@ provider "aws" {
 terraform {
  backend "s3" {
  bucket = "digilians-tfstate"
- key = "tofu.tfstate"
+ key = "terraform.tfstate"
  region = var.REGION
  }
 }
