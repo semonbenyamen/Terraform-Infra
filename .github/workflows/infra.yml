@@ -47,16 +47,16 @@ jobs:
       if: ${{ inputs.action == 'plan' }}
       run: |
         cd infra
-        terraform plan -var-file="${{ inputs.env }}.tfvars"
+        terraform plan 
 
     - name: Terraform Apply
       if: ${{ inputs.action == 'apply' }}
       run: |
         cd infra
-        terraform apply -auto-approve -var-file="${{ inputs.env }}.tfvars"
+        terraform apply -auto-approve 
 
     - name: Terraform Destroy
       if: ${{ inputs.action == 'destroy' }}
       run: |
         cd infra
-        terraform destroy -auto-approve -var-file="${{ inputs.env }}.tfvars"
+        terraform destroy -auto-approve 
