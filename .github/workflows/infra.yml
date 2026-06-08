@@ -1,0 +1,23 @@
+name: IaC Workflow (Terraform)
+run-name: terraform ${{ inputs.action }}
+on:
+    workflow_dispatch:
+        inputs:
+            action:
+                type: choice
+                options:
+                - apply
+                - destroy
+                - plan
+
+jops:
+    terraform-action:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Clone Github Rebo
+          uses: actuion/chechout@v4
+        - name: Infra initiate
+          run: Terraform init
+        - name: Terraform apply
+          if: ${{ inputs.action == 'apply' }}
+          run: terraform apply -auto-approve
