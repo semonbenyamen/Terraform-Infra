@@ -5,6 +5,6 @@ terraform {
  backend "s3" {
  bucket = "digilians-tfstate"
  key = "terraform.tfstate"
- region = var.REGION
+ region = "eu-west-1"
  }
 }
