@@ -5,3 +5,7 @@ variable "vpc_name" {
 variable "vpc_cider" {
  type = string
 }
+
+variable "subnet_cider" {
+  type = string
+}
